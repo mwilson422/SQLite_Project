@@ -12,9 +12,15 @@ columns of string and numerical values as well as the geometry value
 
 -- SRID 4326 used for everything (WGS 84 GCS)
 
-.load mod_spatialite --loads the spatialite extension
-.mode column --arranges display in organized columns
-.headers on
+
+DROP TABLE IF EXISTS sample_points;
+DROP TABLE IF EXISTS sample_lines;
+DROP TABLE IF EXISTS sample_polygons;
+
+
+SELECT load_extension('mod_spatialite');
+SELECT InitSpatialMetadata(1);
+
 
 -- Create some points
 
