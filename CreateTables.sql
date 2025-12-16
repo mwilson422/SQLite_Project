@@ -75,7 +75,7 @@ CREATE TABLE sample_lines (
 );
 
 -- Insert 8 linestrings
-INSERT INTO sample_lines (id, name, type, length_km, geom) VALUES
+INSERT INTO sample_lines (id, name, type, value, geom) VALUES
 (1, 'Route A', 'Road', 18.4,
  ST_GeomFromText(
    'LINESTRING(
@@ -162,7 +162,7 @@ CREATE TABLE sample_polygons (
 
 -- Insert 6 polygons
 
-INSERT INTO sample_polygons (id, name, zone_type, area_sqkm, geom) VALUES
+INSERT INTO sample_polygons (id, name, zone_type, value, geom) VALUES
 (1, 'Sydney Zone', 'Urban', 1200.5,
  ST_GeomFromText(
    'POLYGON((
