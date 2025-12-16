@@ -24,7 +24,7 @@
 - **REMEMBER if you exit the database and return to it you must re-load spatialite to be able to do any spatial calculations. USE `.load mod_spatialite` or `SELECT load_extension('mod_spatialite');`**
 
 ### Spatial Function Syntax
-- The tables are created with SRID 4326 (WGS84) which is a Geographic Coordinate System so any length or area calculations will have units of degrees which don't mean much so will need to transform before using measurement functions. Because the points are all over Australia, I transforming to GDA2020/Albers Equal Area (SRID 3577) because it preserves area across Australia (distances will still be not perfect but will be reasonably accurate). The units are meters.  
+- The tables are created with SRID 4326 (WGS84) which is a Geographic Coordinate System so any length or area calculations will have units of degrees which don't mean much so will need to transform before using measurement functions. Because the points are all over Australia, I transformed to GDA2020/Albers Equal Area (SRID 3577). It preserves area across Australia (distances will still be not perfect but will be reasonably accurate). The units are meters.  
 - The SpatialQueries.sql will run a series of spatial queries with the goal of practicing the following spatial functions:
     - **ST_Distance(geom1,geom2)** will return the shortest distance between teo geometries
     - **ST_Length(geom)** will return the length of a linestring or multilinestring
