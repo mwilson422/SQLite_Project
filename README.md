@@ -4,8 +4,8 @@
 
 ### Files 
 
-- .sql script called "CreateTables.sql" that creates three tables (1 point, 1 linestring, 1 polygon).
-- .sql script called 
+- .sql script called 'CreateTables.sql' that creates three tables (1 point, 1 linestring, 1 polygon).
+- .sql script called 'SpatialQueries.sql' for practicing various spatial queries using the created tables.
 
 ### Process to Create Tables in SQLite Database
 - Installed the OSWGeo4W shell with GDAL libraries (includes SpatiaLite)
