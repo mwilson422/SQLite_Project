@@ -41,4 +41,4 @@
     - **ST_Difference(geomA,geomB)** subtract geometry B from geometry A where they overlap, if there is no overlap then they are both unchanged
     - **ST_IsValid(geom)** check if geometry is broken
     - **ST_GeometryType(geom)** will return the type of geometry
--- The ST is the indicator the function is speaking geometry. It stands for Spatial Type and is a OGC standard when using spatial functions so that they are recongizable. This is the standard across different databse systems. A full list can be found at [SpatiaLite Function List](https://www.gaia-gis.it/gaia-sins/spatialite-sql-5.1.0.html#p4).
+- The ST is the indicator the function is speaking geometry. It stands for Spatial Type and is a OGC standard when using spatial functions so that they are recongizable. This is the standard across different databse systems. A full list can be found at [SpatiaLite Function List](https://www.gaia-gis.it/gaia-sins/spatialite-sql-5.1.0.html#p4).
