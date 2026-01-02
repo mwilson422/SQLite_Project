@@ -7,10 +7,10 @@
 - .sql script called 'CreateTables.sql' that creates three tables (1 point, 1 linestring, 1 polygon).
 - .sql script called 'SpatialQueries.sql' for practicing various spatial queries using the created tables.
 
-### Process to Create Tables in SQLite Database
-- Installed the OSWGeo4W shell with GDAL libraries (includes SpatiaLite)
-- Used shell to create a SQLite database named 'play' using `sqlite3 play.db`
-- To get SQLite version number use `SELECT sqlite_version();` to make sure evrything is working.
+### Process to Create Tables in SQLite Database 
+- Installed the OSWGeo4W shell with GDAL libraries (includes SpatiaLite) on Windows and used Homebrew to install on MacOS.
+- Used shell to create a SQLite database named 'play' using `sqlite3 play.db` and enter SQLite.
+- To get SQLite version number in SQLite use `SELECT sqlite_version();` to make sure evrything is working.
 - `.headers on` and `.mode column` to display tables in an organized way.
 - To load the .sql file use `.read CreateTables.sql` or use the relative/full path to navigate to CreateTables.sql location.
     - The .sql file will load and initiliaze SpatiaLite
