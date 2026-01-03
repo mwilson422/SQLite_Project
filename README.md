@@ -8,12 +8,23 @@
 - .sql script called 'SpatialQueries.sql' for practicing various spatial queries using the created tables.
 
 ### Process to Create Tables in SQLite Database 
-- Installed the OSWGeo4W shell with GDAL libraries (includes SpatiaLite) on Windows and used Homebrew to install on MacOS.
-- Used shell to create a SQLite database named 'play' using `sqlite3 play.db` and enter SQLite.
+- For Windows: Installed the OSWGeo4W shell with GDAL libraries (includes SpatiaLite).
+- For MacOS: Installed via Homebrew by running `brew install sqlite` in terminal.
+- Navigate to directory in shell where database will be created.
+- Used shell to create a SQLite database named 'play' using `sqlite3 play.db` and enter SQLite environment.
 - To get SQLite version number in SQLite use `SELECT sqlite_version();` to make sure evrything is working.
 - `.headers on` and `.mode column` to display tables in an organized way.
+    - Another way of doing this is creating a SQLite conguration file that runs automatically when starting SQLite.
+        - Create using `nano ~/.sqliterc` which will create a hidden file (`.`) in the home directory (`~`).
+        - Then using the nano text editor in the shell to enter the following commands:
+            ```
+            .headers on
+            .mode table
+            .load /opt/homebrew/lib/mod_spatialite
+            ```
+        - And save 
 - To load the .sql file use `.read CreateTables.sql` or use the relative/full path to navigate to CreateTables.sql location.
-    - The .sql file will load and initiliaze SpatiaLite
+    - The .sql file will load and initiliaze SpatiaLite (comment this out if make the configuration file that auto loads it)
 - To check that the tables are loaded correctly use the sqlite command `.tables`. You should see the three tables created by running the CreateTables.sql and a bunch of other tables that hold the spatial information from SpatiaLite.
 - To check the geometry of the tables just created use `SELECT * FROM geometry_columns;`.
     - This will return information on the geometry column in following format: *table name | geometry column name | geometry type (POINT=1, LINESTRING=2, polygon=3, multipoint=4, multilinestring=5, multipolygon=6) | dimensions | ESPG code | spatial index? (0=no, 1=yes)*
@@ -21,7 +32,7 @@
 - To check the schema of the table created use `PRAGMA table_info(sample_points);`.
     - This returns each column on a line with pipe seperated values: *index | column name | data type | not null (1=not null, 0=can be null) | default value | primary key (1=yes, 0 =no)*
 
-- **REMEMBER if you exit the database and return to it you must re-load spatialite to be able to do any spatial calculations. USE `.load mod_spatialite` or `SELECT load_extension('mod_spatialite');`**
+- **REMEMBER if you exit the database and return to it you must re-load spatialite to be able to do any spatial calculations if you are not using a configuration file. USE `.load mod_spatialite` or `SELECT load_extension('mod_spatialite');`**
 
 ### Spatial Function Syntax
 - The tables are created with SRID 4326 (WGS84) which is a Geographic Coordinate System so any length or area calculations will have units of degrees which don't mean much so will need to transform before using measurement functions. Because the points are all over Australia, I transformed to GDA2020/Albers Equal Area (SRID 3577). It preserves area across Australia (distances will still be not perfect but will be reasonably accurate). The units are meters.  
