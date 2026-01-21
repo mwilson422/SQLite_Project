@@ -12,12 +12,11 @@ DROP TABLE IF EXISTS sample_polygons;
 
 
 --This is the SQL version to load the spatialite extension
-SELECT load_extension('/opt/homebrew/lib/mod_spatialite'); -- If added to PATH or navigate to location
+--SELECT load_extension('/opt/homebrew/lib/mod_spatialite'); 
 -- This must be loaded every time the database is opened
 
 --SELECT InitSpatialMetadata(1); 
 --Initialize metadata (run once per database)
-
 
 -- Geometry stored as BLOB (Binary Large Object)
 -- Used WKT constructors (ST_GeomFromText). 
